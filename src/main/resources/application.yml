@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: development
+---
+
+spring:
+  profiles: development
+server:
+  port: 9001
+camunda:
+  bpm:
+    webapp:
+      index-redirect-enabled: false
+    rest:
+      enabled: false
+    default-serialization-format: application/json
