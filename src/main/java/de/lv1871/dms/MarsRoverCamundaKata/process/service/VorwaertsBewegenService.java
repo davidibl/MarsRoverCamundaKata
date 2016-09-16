@@ -12,12 +12,18 @@ public class VorwaertsBewegenService extends ProcessServiceBase {
 
 		switch (variables.getCurrentDirection()) {
 			case NORD:
+				if (variables.getYCoordinate() == 9) {
+					variables.setYCoordinate(-1);
+				}
 				variables.setYCoordinate(variables.getYCoordinate() + 1);
 				break;
 			case OST:
 				variables.setXCoordinate(variables.getXCoordinate() + 1);
 				break;
 			case SUED:
+				if (variables.getYCoordinate() == 0) {
+					variables.setYCoordinate(10);
+				}
 				variables.setYCoordinate(variables.getYCoordinate() - 1);
 				break;
 			case WEST:

@@ -13,13 +13,13 @@ public class LinksDrehenService extends ProcessServiceBase {
 
 		switch (variables.getCurrentDirection()) {
 			case NORD:
-				variables.setCurrentDirection(Direction.SUED);
+				variables.setCurrentDirection(Direction.WEST);
 				break;
 			case OST:
 				variables.setCurrentDirection(Direction.NORD);
 				break;
 			case SUED:
-				variables.setCurrentDirection(Direction.NORD);
+				variables.setCurrentDirection(Direction.OST);
 				break;
 			case WEST:
 				variables.setCurrentDirection(Direction.SUED);

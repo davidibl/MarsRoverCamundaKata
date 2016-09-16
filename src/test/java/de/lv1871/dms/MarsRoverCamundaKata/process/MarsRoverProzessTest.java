@@ -42,7 +42,7 @@ public class MarsRoverProzessTest extends AbstractProcessEngineRuleTest {
 			.withDirection(Direction.NORD).withXCoordinate(0).withYCoordinate(0).build();
 
 	private static final MarsRoverState NULL_NEUN_SUED_STATE = MarsRoverStateBuilder.create()
-			.withDirection(Direction.SUED).withXCoordinate(0).withYCoordinate(0).build();
+			.withDirection(Direction.SUED).withXCoordinate(0).withYCoordinate(9).build();
 
 	private static final MarsRoverState ZWEI_ZWEI_OST_STATE = MarsRoverStateBuilder.create()
 			.withDirection(Direction.OST).withXCoordinate(2).withYCoordinate(2).build();
@@ -84,6 +84,17 @@ public class MarsRoverProzessTest extends AbstractProcessEngineRuleTest {
 		MarsRoverState finalState = getFinalState(processInstance);
 
 		assertEquals(NULL_NEUN_SUED_STATE, finalState);
+	}
+
+	@Test
+	public void linksDrehenAusNordRichtungGibtWesten() {
+		LinksDrehenService service = new LinksDrehenService();
+		MarsRoverProcessVariableAccessor variables = new MarsRoverProcessVariableAccessor();
+		variables.setMarsRoverState(NULL_NULL_NORD_STATE);
+
+		service.execute(variables);
+
+		assertEquals(Direction.WEST, variables.getCurrentDirection());
 	}
 
 	private void registerAllBeanImplementations() {

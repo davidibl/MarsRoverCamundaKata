@@ -66,4 +66,10 @@ public class MarsRoverState implements Serializable {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "MarsRoverState [direction=" + direction + ", xCoordinate=" + xCoordinate + ", yCoordinate="
+				+ yCoordinate + "]";
+	}
+
 }

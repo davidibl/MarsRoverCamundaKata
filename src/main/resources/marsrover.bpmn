@@ -93,7 +93,7 @@
       <bpmn:incoming>SequenceFlow_01ah5qb</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_18tup4e</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="LinksDrehenTask" name="Mars Rover nach links drehen" camunda:asyncAfter="true" camunda:delegateExpression="#{rechtsDrehenService}">
+    <bpmn:serviceTask id="LinksDrehenTask" name="Mars Rover nach links drehen" camunda:asyncAfter="true" camunda:delegateExpression="#{linksDrehenService}">
       <bpmn:incoming>SequenceFlow_0832con</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1h1b6gh</bpmn:outgoing>
     </bpmn:serviceTask>
