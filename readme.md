@@ -24,5 +24,10 @@ Das virtuelle Koordinaten System in dem sich der Rover bewegt ist 10 Felder hoch
 Sobald der BPMN Prozess eine neue Position berechnet hat, wird der aktuelle Status des Marsrovers via Websocket versendet
 und kann durch einen registrierten Client verarbeitet werden.
 
+Der Client findet sich hier:
+https://github.com/davidibl/MarsRoverCamundaClient
+
+Das Projekt ist für ein ganz besonderes Dojo der LV1871 entstanden.
+
 Viel Spass
-David
+David Ibl
