@@ -16,18 +16,18 @@ import de.lv1871.dms.MarsRoverCamundaKata.service.MarsRoverService;
 @CrossOrigin
 public class MarsRoverResource {
 
-	@Autowired
-	private MarsRoverService marsRoverService;
+    @Autowired
+    private MarsRoverService marsRoverService;
 
-	@RequestMapping(path = "/api/marsrover", method = RequestMethod.POST)
-	public @ResponseBody String postCommandString(@RequestParam("commands") String commands,
-			@RequestBody MarsRoverState state) {
-		return marsRoverService.startMarsRover(commands, state);
-	}
+    @RequestMapping(path = "/api/marsrover", method = RequestMethod.POST)
+    public @ResponseBody String postCommandString(@RequestParam("commands") String commands,
+	    @RequestBody MarsRoverState state) {
+	return marsRoverService.startMarsRover(commands, state);
+    }
 
-	@RequestMapping(path = "/api/marsrover/state", method = RequestMethod.GET)
-	public @ResponseBody MarsRoverState getInitialState() {
-		return marsRoverService.getIntialState();
-	}
+    @RequestMapping(path = "/api/marsrover/state", method = RequestMethod.GET)
+    public @ResponseBody MarsRoverState getInitialState() {
+	return marsRoverService.getIntialState();
+    }
 
 }
