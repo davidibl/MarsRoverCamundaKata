@@ -27,19 +27,19 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class App {
 
-    public static void main(String[] args) {
-	SpringApplication.run(App.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(App.class, args);
+	}
 
-    @Bean
-    @Primary
-    @ConfigurationProperties(prefix = "datasource.primary")
-    public DataSource primaryDataSource() {
-	return DataSourceBuilder.create().url("jdbc:h2:file:./db/camunda.db").build();
-    }
+	@Bean
+	@Primary
+	@ConfigurationProperties(prefix = "datasource.primary")
+	public DataSource primaryDataSource() {
+		return DataSourceBuilder.create().url("jdbc:h2:file:./db/camunda.db").build();
+	}
 
-    @Bean
-    public Docket prozessApi() {
+	@Bean
+	public Docket prozessApi() {
 	// @formatter:off
 	return new Docket(DocumentationType.SWAGGER_2)
 		.groupName("prozessinstanz-api")
@@ -48,13 +48,13 @@ public class App {
 		.paths(prozessPaths())
 		.build();
 	// @formatter:on
-    }
+	}
 
-    private Predicate<String> prozessPaths() {
-	return regex("/api/prozessinstanz.*");
-    }
+	private Predicate<String> prozessPaths() {
+		return regex("/api/prozessinstanz.*");
+	}
 
-    private ApiInfo prozessApiInfo() {
+	private ApiInfo prozessApiInfo() {
 	// @formatter:off
 	return new ApiInfoBuilder()
 		.title("Prozessinstanz API")
@@ -62,10 +62,10 @@ public class App {
 		.version("2.0")
 		.build();
 	// @formatter:on
-    }
+	}
 
-    @Bean
-    public Docket marsroverApi() {
+	@Bean
+	public Docket marsroverApi() {
 	// @formatter:off
 	return new Docket(DocumentationType.SWAGGER_2)
 		.groupName("marsrover-api")
@@ -74,13 +74,13 @@ public class App {
 		.paths(marsroverPaths())
 		.build();
 	// @formatter:on
-    }
+	}
 
-    private Predicate<String> marsroverPaths() {
-	return regex("/api/marsrover.*");
-    }
+	private Predicate<String> marsroverPaths() {
+		return regex("/api/marsrover.*");
+	}
 
-    private ApiInfo marsroverApiInfo() {
+	private ApiInfo marsroverApiInfo() {
 	// @formatter:off
 	return new ApiInfoBuilder()
 		.title("Marsrover API")
@@ -88,5 +88,5 @@ public class App {
 		.version("2.0")
 		.build();
 	// @formatter:on
-    }
+	}
 }
